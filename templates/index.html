@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Hotel Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Mayank Royal Residency</h1>
+        <nav>
+            <a href="{{ url_for('guests_route') }}">Guests</a> |
+            <a href="{{ url_for('rooms_route') }}">Rooms</a> |
+            <a href="{{ url_for('bookings_route') }}">Bookings</a> |
+            <a href="{{ url_for('logout') }}">Logout</a>
+        </nav>
+    </div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bookings</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+<div class="container">
+    <h2>Create Booking</h2>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <ul>
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    <form method="post">
+        <label for="guest_id">Guest ID</label>
+        <input id="guest_id" name="guest_id" type="number" min="1" required>
+
+        <label for="room_id">Room ID</label>
+        <input id="room_id" name="room_id" type="number" min="1" required>
+
+        <label for="check_in">Check-in Date</label>
+        <input id="check_in" name="check_in" type="date" required>
+
+        <label for="check_out">Check-out Date</label>
+        <input id="check_out" name="check_out" type="date" required>
+
+        <input type="submit" value="Book Room">
+    </form>
+
+    <h2>Booking List</h2>
+    {% if bookings %}
+    <table>
+        <thead>
+            <tr>
+                <th>Booking ID</th><th>Guest Name</th><th>Room Number</th><th>Check-in</th><th>Check-out</th><th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking[0] }}</td>
+                <td>{{ booking }}</td>
+                <td>{{ booking }}</td>
+                <td>{{ booking }}</td>
+                <td>{{ booking }}</td>
+                <td>
+                    <form method="post" action="{{ url_for('delete_booking', booking_id=booking[0]) }}" onsubmit="return confirm('Delete this booking?');" style="display:inline;">
+                        <button type="submit" class="secondary">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No bookings found.</p>
+    {% endif %}
+
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</div>
+</body>
+</html>

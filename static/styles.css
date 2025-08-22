@@ -1,0 +1,273 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans&display=swap');
+
+/* Reset & base */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+}
+
+/* Background with overlay */
+body {
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('/static/images/hotel-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+}
+
+/* Main container */
+.container {
+    background: rgba(255, 255, 255, 0.95);
+    max-width: 900px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 30px 40px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    animation: fadeInUp 0.75s ease forwards;
+}
+
+/* Headings */
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+/* Links */
+a {
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #005fa3;
+    text-decoration: underline;
+}
+
+/* Forms */
+form {
+    margin-bottom: 40px;
+}
+
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #444;
+}
+
+input[type="text"], input[type="number"], input[type="email"],input[type="password"], input[type="date"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1.5px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="date"]:focus {
+    border-color: #0077cc;
+    box-shadow: 0 0 8px rgba(0, 119, 204, 0.5);
+    outline: none;
+}
+
+/* Pro-level buttons */
+button, input[type="submit"] {
+    display: inline-block;
+    background-color: #0077cc;
+    color: #fff;
+    font-weight: 700;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 6px 15px rgba(0, 119, 204, 0.4);
+    transition: 
+        background-color 0.3s ease, 
+        box-shadow 0.3s ease,
+        transform 0.2s ease;
+    user-select: none;
+    width: 100%;
+}
+
+button:hover, input[type="submit"]:hover {
+    background-color: #005fa3;
+    box-shadow: 0 9px 22px rgba(0, 95, 163, 0.7);
+    transform: translateY(-3px);
+}
+
+button:active, input[type="submit"]:active {
+    background-color: #004a7c;
+    box-shadow: 0 4px 8px rgba(0, 74, 124, 0.6);
+    transform: translateY(-1px);
+}
+
+button:focus, input[type="submit"]:focus {
+    outline: 3px solid #ffd369;
+    outline-offset: 2px;
+}
+
+/* Secondary button */
+button.secondary {
+    background-color: #ffd369;
+    color: #4a2c00;
+    box-shadow: 0 6px 15px rgba(255, 211, 105, 0.6);
+    width: auto;
+    padding: 10px 24px;
+}
+
+button.secondary:hover {
+    background-color: #ffb347;
+    box-shadow: 0 9px 22px rgba(255, 179, 71, 0.7);
+    transform: translateY(-3px);
+}
+
+button.secondary:active {
+    background-color: #cc8e2a;
+    box-shadow: 0 4px 8px rgba(204, 142, 42, 0.6);
+    transform: translateY(-1px);
+}
+
+/* Disabled button */
+button:disabled, input[type="submit"]:disabled {
+    background-color: #bbb;
+    color: #666;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 1rem;
+    color: #444;
+}
+
+th {
+    background-color: #f1f1f1;
+    font-weight: 700;
+}
+
+tr:hover {
+    background-color: #e9f3ff;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    input[type="submit"], button {
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+}
+
+/* Animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Ensure long text wraps inside table cells and container */
+table {
+    table-layout: fixed;  /* Enforce fixed column widths */
+    width: 100%;
+    word-wrap: break-word; /* Allows breaking long words */
+    overflow-wrap: break-word; /* Supports word break */
+}
+
+/* Make sure table cells wrap text and avoid overflow */
+th, td {
+    white-space: normal; /* Allow wrapping */
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Add horizontal scroll on small screens to prevent layout break */
+@media (max-width: 640px) {
+    .container {
+        padding: 20px;
+        overflow-x: auto; /* Enables horizontal scroll */
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap; /* Prevent wrapping on very small screens, user can scroll */
+    }
+}
+
+/* Container with padding and max width (adjust if needed) */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+
+/* Optional: for long URLs or emails that don't have natural breaks */
+td.email, td.address {
+    word-break: break-all; /* Force break anywhere if needed */
+}
+
+/* Optional: Add padding and reduce font-size for smaller screens */
+@media (max-width: 480px) {
+    th, td {
+        font-size: 0.9rem;
+        padding: 10px 8px;
+    }
+}
