@@ -2,6 +2,6 @@
 DB_CONFIG = {
     'host': 'localhost',
     'user': 'root',
-    'password': 'Mayank@123',
+    'password': 'password',
     'database': 'hotel_db'
 }
