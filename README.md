@@ -22,6 +22,8 @@ Backend: Python, Flask framework
 Database: MySQL
 
 Frontend: HTML, CSS (with responsive design)
+Contact us:
+email:mayankgowda83@gmail.com
 
 Authentication: Flask session management and password hashing with Werkzeug
 
