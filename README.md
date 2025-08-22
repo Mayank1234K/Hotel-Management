@@ -22,10 +22,11 @@ Backend: Python, Flask framework
 Database: MySQL
 
 Frontend: HTML, CSS (with responsive design)
-Contact us:
-email:mayankgowda83@gmail.com
+
 
 Authentication: Flask session management and password hashing with Werkzeug
 
 Usage
 This system is ideal for small to medium hotels looking for a simple way to manage day-to-day hotel operations digitally. It can be extended or customized for larger-scale deployments with additional features like reports, payments, and notifications.
+Contact us:
+email:mayankgowda83@gmail.com
